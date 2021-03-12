@@ -4,11 +4,11 @@ import TouchAppIcon from '@material-ui/icons/TouchApp';
 import { useStyles } from '../styles';
 import Logo from '../components/Logo';
 
-export default function HomeScreen() {
+export default function HomeScreen(props) {
   const styles = useStyles();
   return (
     <Card>
-      <CardActionArea>
+      <CardActionArea onClick={() => props.history.push('/choose')}>
         <Box className={[styles.root, styles.red]}>
           <Box className={[styles.main, styles.center]}>
             <Typography component="h6" variant="h6">
