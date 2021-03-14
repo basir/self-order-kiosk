@@ -30,3 +30,7 @@ Feel free to take a look at the course preview and enroll if it is along with yo
    2. Create React Context
    3. Create Set Order Type Action
    4. Redirect user to order screen
+4. Create backend api for categories
+   1. create server.js
+   2. create data.js with sample data
+   3. return categories
