@@ -34,3 +34,8 @@ Feel free to take a look at the course preview and enroll if it is along with yo
    1. create server.js
    2. create data.js with sample data
    3. return categories
+5. List categories
+   1. Create Order Screen
+   2. get categoryList from context
+   3. list categories in use effect
+   4. show categories in left side
