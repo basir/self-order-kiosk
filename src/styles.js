@@ -48,4 +48,29 @@ export const useStyles = makeStyles((theme) => ({
     padding: 10,
   },
   media: { width: 200 },
+  largeButton: {
+    width: 250,
+  },
+  largeInput: {
+    width: '60px!important',
+    padding: '0!important',
+    fontSize: '35px!important',
+    textAlign: 'center!important',
+  },
+  bordered: {
+    borderWidth: 2,
+    borderRadius: 5,
+    margin: 5,
+    borderStyle: 'solid',
+  },
+  row: {
+    display: 'flex',
+    padding: 10,
+  },
+  around: {
+    justifyContent: 'space-around',
+  },
+  between: {
+    justifyContent: 'space-between',
+  },
 }));
