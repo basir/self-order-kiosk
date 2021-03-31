@@ -44,3 +44,7 @@ Feel free to take a look at the course preview and enroll if it is along with yo
    2. create product model
    3. seed products
    4. create api for products
+7. List products
+   2. get productList from context
+   3. list products in use effect
+   4. show products in main section 

@@ -4,12 +4,16 @@ import {
   CATEGORY_LIST_REQUEST,
   CATEGORY_LIST_SUCCESS,
   ORDER_SET_TYPE,
+  PRODUCT_LIST_FAIL,
+  PRODUCT_LIST_REQUEST,
+  PRODUCT_LIST_SUCCESS,
 } from './constants';
 
 export const Store = createContext();
 
 const initialState = {
   categoryList: { loading: true },
+  productList: { loading: true },
   order: {
     orderType: 'Eat in',
   },
@@ -28,6 +32,18 @@ function reducer(state, action) {
       return {
         ...state,
         categoryList: { loading: false, error: action.payload },
+      };
+    case PRODUCT_LIST_REQUEST:
+      return { ...state, productList: { loading: true } };
+    case PRODUCT_LIST_SUCCESS:
+      return {
+        ...state,
+        productList: { loading: false, products: action.payload },
+      };
+    case PRODUCT_LIST_FAIL:
+      return {
+        ...state,
+        productList: { loading: false, error: action.payload },
       };
     case ORDER_SET_TYPE:
       return {
