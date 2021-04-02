@@ -6,6 +6,7 @@ import {
   ORDER_ADD_ITEM,
   ORDER_CLEAR,
   ORDER_REMOVE_ITEM,
+  ORDER_SET_PAYMENT_TYPE,
   ORDER_SET_TYPE,
   PRODUCT_LIST_FAIL,
   PRODUCT_LIST_REQUEST,
@@ -20,6 +21,7 @@ const initialState = {
   order: {
     orderType: 'Eat in',
     orderItems: [],
+    paymentType: 'Pay here',
   },
 };
 
@@ -53,6 +55,11 @@ function reducer(state, action) {
       return {
         ...state,
         order: { ...state.order, orderType: action.payload },
+      };
+    case ORDER_SET_PAYMENT_TYPE:
+      return {
+        ...state,
+        order: { ...state.order, paymentType: action.payload },
       };
     case ORDER_ADD_ITEM: {
       const item = action.payload;
