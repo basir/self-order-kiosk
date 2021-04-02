@@ -9,7 +9,9 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import ChooseScreen from './screens/ChooseScreen';
 import HomeScreen from './screens/HomeScreen';
 import OrderScreen from './screens/OrderScreen';
+import PaymentScreen from './screens/PaymentScreen';
 import ReviewScreen from './screens/ReviewScreen';
+import SelectPaymentScreen from './screens/SelectPaymentScreen';
 
 const theme = createMuiTheme({
   typography: {
@@ -44,6 +46,12 @@ function App() {
             <Route path="/choose" component={ChooseScreen} exact={true}></Route>
             <Route path="/order" component={OrderScreen} exact={true}></Route>
             <Route path="/review" component={ReviewScreen} exact></Route>
+            <Route
+              path="/select-payment"
+              component={SelectPaymentScreen}
+              exact
+            ></Route>
+            <Route path="/payment" component={PaymentScreen} exact></Route>
           </Paper>
         </Container>
       </ThemeProvider>
