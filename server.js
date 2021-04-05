@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const data = require('./data');
@@ -92,6 +93,12 @@ app.post('/api/orders', async (req, res) => {
   }
   const order = await Order({ ...req.body, number: lastNumber + 1 }).save();
   res.send(order);
+});
+
+app.use(express.static(path.join(__dirname, '/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/build/index.html'));
 });
 
 const port = process.env.PORT || 5000;

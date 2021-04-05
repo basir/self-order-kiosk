@@ -68,3 +68,14 @@ Feel free to take a look at the course preview and enroll if it is along with yo
     1. create order model  
     2. build backend api
     3. create complete order screen
+12. Publish to heroku
+    1.  create Procfile
+    2.  serve build folder
+    3.  send index.html file
+    4.  create heroku account
+    5.  install heroku cli
+    6.  create cloud mongodb database
+    7.  get connection string from cloud mongodb
+    8.  put it in heroku
+    9.  seed data
+    10. test web app on heroku
