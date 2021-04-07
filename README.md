@@ -79,3 +79,7 @@ Feel free to take a look at the course preview and enroll if it is along with yo
     8.  put it in heroku
     9.  seed data
     10. test web app on heroku
+13. Create Admin Screen
+    1.  build list order api
+    2.  show order in the screen
+    3.  create ready, cancel and deliver button

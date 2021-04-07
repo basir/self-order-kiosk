@@ -5,7 +5,9 @@ import {
   Paper,
   ThemeProvider,
 } from '@material-ui/core';
+import { useContext } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import AdminScreen from './screens/AdminScreen';
 import ChooseScreen from './screens/ChooseScreen';
 import CompleteOrderScreen from './screens/CompleteOrderScreen';
 import HomeScreen from './screens/HomeScreen';
@@ -13,6 +15,7 @@ import OrderScreen from './screens/OrderScreen';
 import PaymentScreen from './screens/PaymentScreen';
 import ReviewScreen from './screens/ReviewScreen';
 import SelectPaymentScreen from './screens/SelectPaymentScreen';
+import { Store } from './Store';
 
 const theme = createMuiTheme({
   typography: {
@@ -37,11 +40,13 @@ const theme = createMuiTheme({
 });
 
 function App() {
+  const { state } = useContext(Store);
+
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Container maxWidth="sm">
+        <Container maxWidth={state.widthScreen ? 'lg' : 'sm'}>
           <Paper>
             <Route path="/" component={HomeScreen} exact={true}></Route>
             <Route path="/choose" component={ChooseScreen} exact={true}></Route>
@@ -58,6 +63,7 @@ function App() {
               component={CompleteOrderScreen}
               exact
             ></Route>
+            <Route path="/admin" component={AdminScreen} exact></Route>
           </Paper>
         </Container>
       </ThemeProvider>
