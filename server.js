@@ -118,6 +118,19 @@ app.post('/api/orders', async (req, res) => {
   res.send(order);
 });
 
+app.get('/api/orders/queue', async (req, res) => {
+  const inProgressOrders = await Order.find(
+    { inProgress: true, isCanceled: false },
+    'number'
+  );
+  const servingOrders = await Order.find(
+    { isReady: true, isDelivered: false },
+    'number'
+  );
+
+  res.send({ inProgressOrders, servingOrders });
+});
+
 app.use(express.static(path.join(__dirname, '/build')));
 
 app.get('*', (req, res) => {
