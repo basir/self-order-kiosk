@@ -13,6 +13,7 @@ import CompleteOrderScreen from './screens/CompleteOrderScreen';
 import HomeScreen from './screens/HomeScreen';
 import OrderScreen from './screens/OrderScreen';
 import PaymentScreen from './screens/PaymentScreen';
+import QueueScreen from './screens/QueueScreen';
 import ReviewScreen from './screens/ReviewScreen';
 import SelectPaymentScreen from './screens/SelectPaymentScreen';
 import { Store } from './Store';
@@ -64,6 +65,7 @@ function App() {
               exact
             ></Route>
             <Route path="/admin" component={AdminScreen} exact></Route>
+            <Route path="/queue" component={QueueScreen} exact></Route>
           </Paper>
         </Container>
       </ThemeProvider>
